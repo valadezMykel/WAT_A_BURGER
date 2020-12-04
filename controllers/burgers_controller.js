@@ -5,6 +5,9 @@ const exphbs = require("express-handlebars");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -20,6 +23,7 @@ module.exports = ()=>{
         console.log("post route started")
         console.log(req.body.burgName);
         console.log(req.body);
+        res.send("/");
     });
 
     app.put("/burger/devour:id", (req, res)=>{
