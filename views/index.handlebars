@@ -3,8 +3,12 @@
 <ul>
     {{#each burgerInfo}}
         <li>
-            <p>{{burger_name}}</p>
+            <p data-id={{id}}>{{burger_name}}</p>
         </li>
     {{/each}}
 </ul>
 
+<form action="/burger/new" method="post">
+  <label for="burgName">Burger Name:</label>
+  <input type="text" id="burgName" name="burgName"><br><br>
+</form>

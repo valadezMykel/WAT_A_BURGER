@@ -7,7 +7,6 @@ const orm = require("../config/orm");
 
 exports.getAllBurgers = (cb)=>{
     orm.selectAll(cb);
-    // console.log("burgerInfo at burger.js", burgersInfo);
 }
 
 // module.export = something?

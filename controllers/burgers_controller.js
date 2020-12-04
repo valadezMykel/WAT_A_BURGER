@@ -11,14 +11,15 @@ app.set("view engine", "handlebars");
 module.exports = ()=>{
     app.get("/", (req, res)=>{
         const cb = (burgerInfo)=>{
-            console.log(burgerInfo);
             res.render("index", {burgerInfo: burgerInfo});
         }
         models.getAllBurgers(cb);
     });
 
     app.post("/burger/new", (req, res)=>{
-
+        console.log("post route started")
+        console.log(req.body.burgName);
+        console.log(req.body);
     });
 
     app.put("/burger/devour:id", (req, res)=>{
