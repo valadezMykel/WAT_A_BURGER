@@ -1,15 +1,31 @@
 {{!-- create a button that will submit the user input into the database --}}
 
+<h1>Burgers to Eat</h1>
 <ul>
     {{#each burgerInfo}}
-        <li>
-            <p>{{burger_name}}</p>
-            <form action="/burger/devour" method="post">
-            <input type="submit" name="devourId" value={{id}} />
-            </form>
-        </li>
+        {{#unless devoured}}
+            <li>
+                <p>{{burger_name}}</p>
+                <form action="/burger/devour" method="post">
+                <input type="submit" name="devourId" value={{id}}/>
+                </form>
+            </li>
+        {{/unless}}
     {{/each}}
 </ul>
+
+<h1>Devoured burgers</h1>
+<ul>
+    {{#each burgerInfo}}
+        {{#if devoured}}
+            <li>
+                <p>{{burger_name}}</p>
+            </li>
+        {{/if}}
+    {{/each}}
+</ul>
+
+<h1>Create a New Burger</h1>
 
 <form action="/burger/new" method="post">
   <label for="burgName">Burger Name:</label>
