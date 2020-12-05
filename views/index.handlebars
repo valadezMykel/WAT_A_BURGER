@@ -3,7 +3,10 @@
 <ul>
     {{#each burgerInfo}}
         <li>
-            <p data-id={{id}}>{{burger_name}}</p>
+            <p>{{burger_name}}</p>
+            <form action="/burger/devour" method="post">
+            <input type="submit" name="devourId" value={{id}} />
+            </form>
         </li>
     {{/each}}
 </ul>

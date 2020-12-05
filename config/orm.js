@@ -20,8 +20,9 @@ exports.insertOne = (burgerName, cb)=>{
     });
 };
 
-exports.updateOne = (burgerId)=>{
+exports.updateOne = (burgerId, cb)=>{
     connection.query("UPDATE burgers SET devoured=true WHERE id=?", [burgerId], (err, results)=>{
-
-    })
+        console.log(results);
+        cb();
+    });
 };

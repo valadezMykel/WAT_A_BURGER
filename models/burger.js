@@ -13,4 +13,7 @@ exports.addBurger = (burgerName, cb)=>{
     orm.insertOne(burgerName, cb);
 }
 
+exports.devourBurger = (burgerId, cb)=>{
+    orm.updateOne(burgerId, cb);
+}
 // module.export = something?

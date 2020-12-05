@@ -20,8 +20,6 @@ module.exports = ()=>{
     });
 
     app.post("/burger/new", (req, res)=>{
-        console.log("post route started")
-        console.log(req.body.burgName);
 
         const cb = ()=>{
             res.redirect("/");
@@ -30,8 +28,13 @@ module.exports = ()=>{
         models.addBurger(req.body.burgName, cb)
     });
 
-    app.put("/burger/devour:id", (req, res)=>{
+    app.post("/burger/devour", (req, res)=>{
 
+        const cb = ()=>{
+            res.redirect("/");
+        };
+
+        models.devourBurger(req.body.devourId, cb);
     });
 }
 
