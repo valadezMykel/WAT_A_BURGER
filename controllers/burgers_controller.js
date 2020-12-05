@@ -22,8 +22,7 @@ module.exports = ()=>{
     app.post("/burger/new", (req, res)=>{
         console.log("post route started")
         console.log(req.body.burgName);
-        console.log(req.body);
-        res.send("/");
+        res.redirect("/");
     });
 
     app.put("/burger/devour:id", (req, res)=>{
