@@ -7,6 +7,10 @@ const orm = require("../config/orm");
 
 exports.getAllBurgers = (cb)=>{
     orm.selectAll(cb);
+};
+
+exports.addBurger = (burgerName, cb)=>{
+    orm.insertOne(burgerName, cb);
 }
 
 // module.export = something?

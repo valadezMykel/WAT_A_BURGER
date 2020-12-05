@@ -11,9 +11,12 @@ exports.selectAll = (cb)=>{
 
 };
 
-exports.insertONe = (burgerName)=>{
-    connection.query("INSERT INTO burger (name) VALUES (?)", [burgerName], (err, results)=>{
-
+exports.insertOne = (burgerName, cb)=>{
+    console.log(burgerName)
+    connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [burgerName], (err, results)=>{
+        if(err) throw err;
+        console.log("insert results", results);
+        cb();
     });
 };
 
