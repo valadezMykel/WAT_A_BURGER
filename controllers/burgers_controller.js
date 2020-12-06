@@ -1,19 +1,19 @@
-const express = require("express");
+// const express = require("express");
 const models = require("../models/burger");
-const exphbs = require("express-handlebars");
+// const exphbs = require("express-handlebars");
 
-const app = express();
-const PORT = process.env.PORT || 8080;
+// const app = express();
+// const PORT = process.env.PORT || 8080;
 
 // app.use(express.static("../public"))
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
-module.exports = ()=>{
+module.exports = (app)=>{
     app.get("/", (req, res)=>{
         const cb = (burgerInfo)=>{
             res.render("index", {burgerInfo: burgerInfo});
@@ -40,9 +40,7 @@ module.exports = ()=>{
     });
 }
 
-app.listen(PORT, function() {
-    console.log("Server listening on: http://localhost:" + PORT);
-});
+
 
 
 
