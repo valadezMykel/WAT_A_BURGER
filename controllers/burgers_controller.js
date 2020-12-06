@@ -1,17 +1,5 @@
-// const express = require("express");
+
 const models = require("../models/burger");
-// const exphbs = require("express-handlebars");
-
-// const app = express();
-// const PORT = process.env.PORT || 8080;
-
-// app.use(express.static("../public"))
-
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-
-// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-// app.set("view engine", "handlebars");
 
 module.exports = (app)=>{
     app.get("/", (req, res)=>{
@@ -39,11 +27,6 @@ module.exports = (app)=>{
         models.devourBurger(req.body.devourId, cb);
     });
 }
-
-
-
-
-
 
 // tells the model what to do and sends response from the model to the view
 

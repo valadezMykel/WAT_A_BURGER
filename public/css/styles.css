@@ -1,3 +1,54 @@
 body{
-    background-color: greenyellow;
+    background-color: orange;
+}
+
+img{
+    align-self: center;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+#instructions{
+    background-color: rgb(240, 255, 240, .8);
+    padding: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+#indexHb{
+    background-color: honeydew;
+    padding: 20px;
+}
+
+#toEat{
+    background-color: honeydew;
+    float: left;
+    margin-bottom: 40px;
+}
+
+#toEat p{
+    display: inline-block;
+}
+
+#toEat form{
+    display: inline-block;
+}
+
+#wasEaten{
+    background-color: honeydew;
+    float: right;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 550px){
+    #wasEaten{
+        clear: left;
+        float: left;
+    }
+}
+
+#newBurger{
+    padding: 20px;
+    background-color: honeydew;
+    clear: both;
 }

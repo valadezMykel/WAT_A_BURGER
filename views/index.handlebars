@@ -1,36 +1,40 @@
+<div id="indexHb">
+<div id="toEat">
+    <h1>Burgers to Eat</h1>
+        {{#each burgerInfo}}
+            {{#unless devoured}}
+                <div>
+                    <p>{{burger_name}}</p>
 
-<h1>Burgers to Eat</h1>
-<ul>
-    {{#each burgerInfo}}
-        {{#unless devoured}}
-            <li>
-                <p>{{burger_name}}</p>
-                {{!-- <form action="/burger/devour" method="post">
-                <input type="submit" name="devourId" value={{id}}>
-                </form> --}}
-                <form action="/burger/devour" method="post">
-                    <button name="devourId" value="{{id}}">devour</button>
-                </form>
-            </li>
-        {{/unless}}
-    {{/each}}
-</ul>
+                    <form action="/burger/devour" method="post">
+                        <button name="devourId" value="{{id}}">devour</button>
+                    </form>
+                </div>
+            {{/unless}}
+        {{/each}}
 
-<h1>Devoured burgers</h1>
-<ul>
-    {{#each burgerInfo}}
-        {{#if devoured}}
-            <li>
-                <p>{{burger_name}}</p>
-            </li>
-        {{/if}}
-    {{/each}}
-</ul>
+</div>
 
-<h1>Create a New Burger</h1>
+<div id="wasEaten">
+    <h1>Devoured burgers</h1>
+    <ul>
+        {{#each burgerInfo}}
+            {{#if devoured}}
+                <li>
+                    <p>{{burger_name}}</p>
+                </li>
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>
 
-<form action="/burger/new" method="post">
-  <label for="burgName">Burger Name:</label>
-  <input type="text" id="burgName" name="burgName"><br><br>
-  <input type="submit" value="Submit">
-</form>
+<div id="newBurger">
+    <h1>Create a New Burger</h1>
+
+    <form action="/burger/new" method="post">
+    <label for="burgName">Burger Name:</label>
+    <input type="text" id="burgName" name="burgName"><br><br>
+    <input type="submit" value="Submit">
+    </form>
+</div>
+</div>
