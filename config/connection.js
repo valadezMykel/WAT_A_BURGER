@@ -6,7 +6,7 @@ const dbConfig = {
     port: 3306,
     user: process.env.dbUser,
     password: process.env.dbPass,
-    database: "burgers_db"
+    database: process.env.db
 };
 
 let connection;
