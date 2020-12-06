@@ -8,8 +8,9 @@
                 {{!-- <form action="/burger/devour" method="post">
                 <input type="submit" name="devourId" value={{id}}>
                 </form> --}}
-
-                <button><a href="/burger/devour:{{id}}">devour</a></button>
+                <form action="/burger/devour" method="post">
+                    <button name="devourId" value="{{id}}">devour</button>
+                </form>
             </li>
         {{/unless}}
     {{/each}}

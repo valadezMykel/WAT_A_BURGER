@@ -1,11 +1,8 @@
 const connection = require("./connection");
 
 exports.selectAll = (table, cb)=>{
-
-    console.log("query has started")
     connection.query("SELECT * FROM ??", [table], (err, results)=>{
         if(err) throw err;
-        console.log(results);
         cb(results);
     }); 
 
@@ -21,7 +18,8 @@ exports.insertOne = (table, col, value, cb)=>{
 };
 
 exports.updateOne = (table, col, changeValueTo, id, cb)=>{
-    connection.query("UPDATE ?? SET ??=?? WHERE id=?", [table, col, changeValueTo, id], (err, results)=>{
+    connection.query("UPDATE ?? SET ??=? WHERE id=?", [table, col, changeValueTo, id], (err, results)=>{
+        console.log(err);
         console.log(results);
         cb();
     });
