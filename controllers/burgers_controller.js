@@ -28,13 +28,13 @@ module.exports = ()=>{
         models.addBurger(req.body.burgName, cb)
     });
 
-    app.post("/burger/devour", (req, res)=>{
-
+    app.post("/burger/devour:id", (req, res)=>{
+        console.log(req.params.id)
         const cb = ()=>{
             res.redirect("/");
         };
 
-        models.devourBurger(req.body.devourId, cb);
+        models.devourBurger(req.params.id, cb);
     });
 }
 

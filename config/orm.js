@@ -1,9 +1,9 @@
 const connection = require("./connection");
 
-exports.selectAll = (cb)=>{
+exports.selectAll = (table, cb)=>{
 
     console.log("query has started")
-    connection.query("SELECT * FROM burgers", (err, results)=>{
+    connection.query("SELECT * FROM ??", [table], (err, results)=>{
         if(err) throw err;
         console.log(results);
         cb(results);
@@ -11,17 +11,17 @@ exports.selectAll = (cb)=>{
 
 };
 
-exports.insertOne = (burgerName, cb)=>{
-    console.log(burgerName)
-    connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [burgerName], (err, results)=>{
+exports.insertOne = (table, col, value, cb)=>{
+    console.log (value)
+    connection.query("INSERT INTO ?? (??) VALUES (?)", [table, col, value], (err, results)=>{
         if(err) throw err;
         console.log("insert results", results);
         cb();
     });
 };
 
-exports.updateOne = (burgerId, cb)=>{
-    connection.query("UPDATE burgers SET devoured=true WHERE id=?", [burgerId], (err, results)=>{
+exports.updateOne = (table, col, changeValueTo, id, cb)=>{
+    connection.query("UPDATE ?? SET ??=?? WHERE id=?", [table, col, changeValueTo, id], (err, results)=>{
         console.log(results);
         cb();
     });
