@@ -12,6 +12,8 @@ const dbConfig = {
 
 let connection = mysql.createPool(dbConfig);
 
+connection.getConnection();
+
 
 
 // const handleDisconnect = ()=> {
