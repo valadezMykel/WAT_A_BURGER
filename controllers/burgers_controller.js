@@ -3,7 +3,7 @@ const models = require("../models/burger");
 
 module.exports = (app)=>{
     app.get("*", (req, res)=>{
-        console.log("test log")
+
         const cb = (burgerInfo)=>{
             res.render("index", {burgerInfo: burgerInfo});
         }

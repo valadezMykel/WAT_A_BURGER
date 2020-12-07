@@ -2,7 +2,9 @@ const connection = require("./connection");
 
 exports.selectAll = (table, cb)=>{
     connection.query("SELECT * FROM ??", [table], (err, results)=>{
-        // if(err) throw err;
+        if(err){
+            console.log(err);
+        }
         cb(results);
     }); 
 

@@ -1,16 +1,16 @@
 const mysql = require("mysql");
 require("dotenv").config();
 
-const dbConfig = {
-    // connectionLimit: 10,
-    host: process.env.dbHost,
-    port: 3306,
-    user: process.env.dbUser,
-    password: process.env.dbPass,
-    database: process.env.db
-};
+// const dbConfig = {
+//     // connectionLimit: 10,
+//     host: process.env.dbHost,
+//     port: 3306,
+//     user: process.env.dbUser,
+//     password: process.env.dbPass,
+//     database: process.env.db
+// };
 
-const connection = mysql.createPool(dbConfig);
+const connection = mysql.createPool(process.env.JAWSDB_URL);
 
 
 
