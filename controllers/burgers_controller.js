@@ -1,4 +1,3 @@
-
 const models = require("../models/burger");
 
 module.exports = (app)=>{
@@ -28,7 +27,3 @@ module.exports = (app)=>{
         models.devourBurger(req.body.devourId, cb);
     });
 }
-
-// tells the model what to do and sends response from the model to the view
-
-// will also handle the routes that urls try to connect with

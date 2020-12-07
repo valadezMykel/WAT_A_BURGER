@@ -9,7 +9,7 @@
 For the Repository link click [here](https://github.com/valadezMykel/WAT_A_BURGER)
 
 
-For a link to the deployed project click [here](placeholder)
+For a link to the deployed project click [here](https://tranquil-cliffs-84056.herokuapp.com/)
 
 
 ## Table of Contents
@@ -21,7 +21,7 @@ For a link to the deployed project click [here](placeholder)
 * [Contributors](#contributors)
 * [Questions](#questions)
 
-![placeholder](placeholder)
+![placeholder](./public/images/screen_shot.png)
 
 
 ## About the Project
@@ -36,7 +36,7 @@ Clone this repository, set your environment variable to connect to the db that y
 
 ## Usage
 
-Not much but I did learn more about structuring files and making your project easily extensible.
+Not much, but I did learn more about structuring files and making your project easily extensible.
 
 
 ## License
