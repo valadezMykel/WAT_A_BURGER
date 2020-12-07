@@ -10,9 +10,18 @@ const dbConfig = {
     database: process.env.db
 };
 
-let connection = mysql.createPool(dbConfig);
+let connection;
 
-connection.getConnection();
+const reconnect = ()=>{
+    connection = mysql.createPool(dbConfig);
+
+};
+
+// connection.on("error", reconnect());
+reconnect();
+
+
+// connection.getConnection();
 
 
 
