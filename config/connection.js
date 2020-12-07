@@ -2,13 +2,12 @@ const mysql = require("mysql");
 require("dotenv").config();
 
 const dbConfig = {
-    // connectionLimit: 5,
-    // host: process.env.dbHost,
-    // port: 3306,
-    // user: process.env.dbUser,
-    // password: process.env.dbPass,
-    // database: process.env.db
-    process.env.JAWS_DBURL
+    connectionLimit: 10,
+    host: process.env.dbHost,
+    port: 3306,
+    user: process.env.dbUser,
+    password: process.env.dbPass,
+    database: process.env.db
 };
 
 let connection;
@@ -18,9 +17,9 @@ const reconnect = ()=>{
 
 };
 
-// connection.on("error", reconnect());
 reconnect();
 
+connection.on("error", reconnect());
 
 // connection.getConnection();
 
