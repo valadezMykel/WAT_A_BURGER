@@ -19,7 +19,7 @@ const reconnect = ()=>{
 
 reconnect();
 
-connection.on("error", reconnect());
+// connection.on("error", reconnect());
 
 // connection.getConnection();
 
